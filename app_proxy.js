@@ -10,9 +10,9 @@ app.use(cors());
 app.get('*', cors(), (req, res) => {
 
     const AuthStr = "Bearer ".concat(req.query.apiKey);
-
+    // , dataType: JSON
     axios.get('https://api.yelp.com/v3/businesses/search?term=' + req.query.term + "&location=" + req.query.location + "&radius=" + req.query.radius + "&limit=30",
-    {headers: { Authorization: AuthStr, dataType: JSON, mode: 'cors', "Access-Control-Allow-Origin": "*"}}
+    {headers: { Authorization: AuthStr, mode: 'cors', "Access-Control-Allow-Origin": "*"}}
     )
     .then(response => {
         res.header('Access-Control-Allow-Origin', '*');
