@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.get('*', (req, res) => {
+app.get('*', cors(), (req, res) => {
 
     const AuthStr = "Bearer ".concat(req.query.apiKey);
 
