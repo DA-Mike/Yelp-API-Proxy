@@ -13,11 +13,11 @@ app.get('*', (req, res) => {
     {headers: { Authorization: AuthStr, dataType: JSON, mode: 'cors'}}
     )
     .then(response => {
-        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Origin', 'https://da-mike.github.io/Bar-Hopper/');
         res.send(response.data);
     })
     .catch(error => {
-        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Origin', 'https://da-mike.github.io/Bar-Hopper/');
         res.send(error.code);
         res.send(error);
     })
