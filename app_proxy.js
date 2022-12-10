@@ -10,7 +10,7 @@ app.get('*', (req, res) => {
     app.use(cors);
 
     axios.get('https://api.yelp.com/v3/businesses/search?term=' + req.query.term + "&location=" + req.query.location + "&radius=" + req.query.radius + "&limit=30",
-    {headers: { Authorization: AuthStr, dataType: JSON, mode: 'cors'}}
+    {headers: { Authorization: AuthStr, dataType: JSON, mode: 'cors', "Access-Control-Allow-Origin": "*"}}
     )
     .then(response => {
         res.header('Access-Control-Allow-Origin', 'https://da-mike.github.io/Bar-Hopper/');
